@@ -611,6 +611,11 @@ body {
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.05);
 }
 
+a:hover, a:focus{
+  text-decoration: none;
+  color: var(--color-gray-400);
+}
+
 .sidebar {
   z-index: 1;
   width: 220px;
