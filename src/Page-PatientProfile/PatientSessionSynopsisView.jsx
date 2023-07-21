@@ -22,6 +22,9 @@ const PatientSessionSynopsisView = () => {
             <div className="user-information-container">
                 <div className="information-header">
                     <p className="title">Session Synopsis</p>
+                    <button className="edit-profile-btn" id="add-qualification-btn" onClick={""}>
+                        Add Notes
+                    </button>
                 </div>
                 <PrescriptionContainer title="Session Synopsis 1" date="23 April 2023">
                     <div className="description-details">

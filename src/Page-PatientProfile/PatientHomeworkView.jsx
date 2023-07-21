@@ -22,6 +22,9 @@ const PatientHomeworkView = () => {
             <div className="user-information-container">
                 <div className="information-header">
                     <p className="title">Homework</p>
+                    <button className="edit-profile-btn" id="add-qualification-btn" onClick={""}>
+                        Create Homework!
+                    </button>
                 </div>
                 <PrescriptionContainer title="Homework 1" date="23 April 2023">
                     <div className="description-details">

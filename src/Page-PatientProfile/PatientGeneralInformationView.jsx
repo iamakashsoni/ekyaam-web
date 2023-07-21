@@ -60,7 +60,7 @@ const PatientGeneralInformationView = () => {
 
     const history = useHistory();
     const handleEditProfile = () => {
-        history.push('/psychiatrist-general-information-edit');
+        history.push('/patient-general-information-edit');
     };
 
     return (

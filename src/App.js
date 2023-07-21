@@ -2,44 +2,46 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "./layout/Layout";
 
-// Dashboard
-import Dashboard from "./dashboard/dashboard";
+// Main
+import Dashboard from "./Page-Main/Dashboard";
+import ManagePatient from "./Page-Main/ManagePatient";
 
 // Psyschiatrist Profile
-import PsychiatristGeneralInformation from "./PsychiatristProfile/PsychiatristGeneralInformation";
-import PsychiatristClinicDetails from "./PsychiatristProfile/PsychiatristClinicDetails";
-import PsychiatristPendingTasks from "./PsychiatristProfile/PsychiatristPendingTasks";
-import PsychiatristPostSessionNotes from "./PsychiatristProfile/PsychiatristPostSessionNotes";
-import PsychiatristPrescriptions from "./PsychiatristProfile/PsychiatristPrescriptions";
-import PsychiatristSessionSynopsis from "./PsychiatristProfile/PsychiatristSessionSynopsis";
-import PsychiatristHomework from "./PsychiatristProfile/PsychiatristHomework";
+import PsychiatristGeneralInformation from "./Page-PsychiatristProfile/PsychiatristGeneralInformation";
+import PsychiatristClinicDetails from "./Page-PsychiatristProfile/PsychiatristClinicDetails";
+import PsychiatristPendingTasks from "./Page-PsychiatristProfile/PsychiatristPendingTasks";
+import PsychiatristPostSessionNotes from "./Page-PsychiatristProfile/PsychiatristPostSessionNotes";
+import PsychiatristPrescriptions from "./Page-PsychiatristProfile/PsychiatristPrescriptions";
+import PsychiatristSessionSynopsis from "./Page-PsychiatristProfile/PsychiatristSessionSynopsis";
+import PsychiatristHomework from "./Page-PsychiatristProfile/PsychiatristHomework";
 
 // Psyschiatrist Profile Edit
-import PsychiatristGeneralInformationEdit from "./PsychiatristProfileEdit/PsychiatristGeneralInformationEdit";
-import PsychiatristClinicDetailsEdit from "./PsychiatristProfileEdit/PsychiatristClinicDetailsEdit";
-import PsychiatristAvailabilityEdit from "./PsychiatristProfileEdit/PsychiatristAvailabilityEdit";
-import PsychiatristQualificationDetailsEdit from "./PsychiatristProfileEdit/PsychiatristQualificationDetailsEdit";
-import PsychiatristReceptionistDetailsEdit from "./PsychiatristProfileEdit/PsychiatristReceptionistDetailsEdit";
+import PsychiatristGeneralInformationEdit from "./Page-PsychiatristProfileEdit/PsychiatristGeneralInformationEdit";
+import PsychiatristClinicDetailsEdit from "./Page-PsychiatristProfileEdit/PsychiatristClinicDetailsEdit";
+import PsychiatristAvailabilityEdit from "./Page-PsychiatristProfileEdit/PsychiatristAvailabilityEdit";
+import PsychiatristQualificationDetailsEdit from "./Page-PsychiatristProfileEdit/PsychiatristQualificationDetailsEdit";
+import PsychiatristReceptionistDetailsEdit from "./Page-PsychiatristProfileEdit/PsychiatristReceptionistDetailsEdit";
 
 // Patient Profile View
-import PatientGeneralInformationView from "./PatientProfile/PatientGeneralInformationView";
+import PatientGeneralInformationView from "./Page-PatientProfile/PatientGeneralInformationView";
 
 // Patient Profile Edit
-import PatientGeneralInformationEdit from "./PatientProfileEdit/PatientGeneralInformationEdit";
-import PatientWorkDetailsEdit from "./PatientProfileEdit/PatientWorkDetailsEdit";
-import PatientEmergencyContactEdit from "./PatientProfileEdit/PatientEmergencyContactEdit";
-import PatientDigitalJournalView from "./PatientProfile/PatientDigitalJournalView";
-import PatientPostSessionNotesView from "./PatientProfile/PatientPostSessionNotesView";
-import PatientPrescriptionView from "./PatientProfile/PatientPrescriptionView";
-import PatientSessionSynopsisView from "./PatientProfile/PatientSessionSynopsisView";
-import PatientHomeworkView from "./PatientProfile/PatientHomeworkView";
+import PatientGeneralInformationEdit from "./Page-PatientProfileEdit/PatientGeneralInformationEdit";
+import PatientWorkDetailsEdit from "./Page-PatientProfileEdit/PatientWorkDetailsEdit";
+import PatientEmergencyContactEdit from "./Page-PatientProfileEdit/PatientEmergencyContactEdit";
+import PatientDigitalJournalView from "./Page-PatientProfile/PatientDigitalJournalView";
+import PatientPostSessionNotesView from "./Page-PatientProfile/PatientPostSessionNotesView";
+import PatientPrescriptionView from "./Page-PatientProfile/PatientPrescriptionView";
+import PatientSessionSynopsisView from "./Page-PatientProfile/PatientSessionSynopsisView";
+import PatientHomeworkView from "./Page-PatientProfile/PatientHomeworkView";
 
 const App = () => (
   <Router>
     <Layout>
       <Switch>
-        {/* Dashboard */}
+        {/* Main */}
         <Route exact path="/" component={Dashboard} />
+        <Route exact path="/manage-patients" component={ManagePatient} />
 
         {/* Psyschiatrist Profile */}
         <Route

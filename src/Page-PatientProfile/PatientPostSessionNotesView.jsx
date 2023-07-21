@@ -50,6 +50,9 @@ const PatientPostSessionNotesView = () => {
       <div className={`user-information-container ${isBlurred ? "blur" : ""}`}>
         <div className="information-header">
           <p className="title">Post Session Notes</p>
+          <button className="edit-profile-btn" id="add-qualification-btn" onClick={""}>
+            Add Notes
+          </button>
         </div>
         <PatientPostSesionNotesContainer title="Post Session Notes" date="23 April 2023">
           <div className="description-details">

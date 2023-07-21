@@ -22,6 +22,9 @@ const PatientPrescriptionView = () => {
             <div className="user-information-container">
                 <div className="information-header">
                     <p className="title">Prescription</p>
+                    <button className="edit-profile-btn" id="add-qualification-btn" onClick={""}>
+                        Create Prescription
+                    </button>
                 </div>
                 <PrescriptionContainer title="Prescription 1" date="23 April 2023">
                     <div className="description-details">
