@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from "react-dom";
 import { useHistory } from 'react-router-dom';
 import logo from "../images/logo.png";
 import ekyaamLogo from "../images/ekyaam-logo.png";
@@ -18,6 +19,7 @@ import settingsIcon from "../images/Settings.svg"
 import menuImg from '../images/menu.svg';
 import crossImg from '../images/cross.svg';
 import purpledownArrow from "../images/purple-downArrow.svg"
+import SignOutPopup from '../components/SignOutPopup';
 
 const sidebarConfig = [
   { id: 1, iconSvg: dashboardIcon, text: "Dashboard", link: "/" },
@@ -124,6 +126,15 @@ const Navbar = () => {
   const history = useHistory();
   const handleEditProfile = () => {
     history.push('/psychiatrist-general-information');
+  };
+
+  const [showSignOutPopup, setShowSignOutPopup] = useState(false);
+
+  const handleSignOutClick = () => {
+    setShowSignOutPopup(true);
+  };
+  const handleSignOutClickClosePopup = () => {
+    setShowSignOutPopup(false);
   };
 
   return (
@@ -336,16 +347,16 @@ const Navbar = () => {
                     </div>
                   </div>
                   <div className="divider"></div>
-                  <div className="profile-frame-container">
-                    <a href="" className="profile-menu-header">
+                  <div className="profile-frame-container buttons">
+                    <button className="profile-menu-header" onClick={() => console.log("")}>
                       <span>Settings</span>
-                    </a>
+                    </button>
                   </div>
                   <div className="divider"></div>
-                  <div className="profile-frame-container">
-                    <a href="" className="profile-menu-header">
+                  <div className="profile-frame-container buttons">
+                    <button className="profile-menu-header" onClick={handleSignOutClick}>
                       <span>Sign Out</span>
-                    </a>
+                    </button>
                   </div>
                   <div className="divider"></div>
                   <div className="profile-frame-container">
@@ -363,7 +374,10 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      {showSignOutPopup &&
+        ReactDOM.createPortal(<SignOutPopup handleClosePopup={handleSignOutClickClosePopup} />, document.body)}
     </nav>
+
   );
 };
 

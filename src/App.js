@@ -3,23 +3,36 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "./layout/Layout";
 
 // Dashboard
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./dashboard/dashboard";
 
 // Psyschiatrist Profile
-import PsychiatristGeneralInformation from "./pages/PsychiatristGeneralInformation";
-import PsychiatristClinicDetails from "./pages/PsychiatristClinicDetails";
-import PsychiatristPendingTasks from "./pages/PsychiatristPendingTasks";
-import PsychiatristPostSessionNotes from "./pages/PsychiatristPostSessionNotes";
-import PsychiatristPrescriptions from "./pages/PsychiatristPrescriptions";
-import PsychiatristSessionSynopsis from "./pages/PsychiatristSessionSynopsis";
-import PsychiatristHomework from "./pages/PsychiatristHomework";
+import PsychiatristGeneralInformation from "./PsychiatristProfile/PsychiatristGeneralInformation";
+import PsychiatristClinicDetails from "./PsychiatristProfile/PsychiatristClinicDetails";
+import PsychiatristPendingTasks from "./PsychiatristProfile/PsychiatristPendingTasks";
+import PsychiatristPostSessionNotes from "./PsychiatristProfile/PsychiatristPostSessionNotes";
+import PsychiatristPrescriptions from "./PsychiatristProfile/PsychiatristPrescriptions";
+import PsychiatristSessionSynopsis from "./PsychiatristProfile/PsychiatristSessionSynopsis";
+import PsychiatristHomework from "./PsychiatristProfile/PsychiatristHomework";
 
 // Psyschiatrist Profile Edit
-import PsychiatristGeneralInformationEdit from "./pages/PsychiatristGeneralInformationEdit";
-import PsychiatristClinicDetailsEdit from "./pages/PsychiatristClinicDetailsEdit";
-import PsychiatristAvailabilityEdit from "./pages/PsychiatristAvailabilityEdit";
-import PsychiatristQualificationDetailsEdit from "./pages/PsychiatristQualificationDetailsEdit";
-import PsychiatristReceptionistDetailsEdit from "./pages/PsychiatristReceptionistDetailsEdit";
+import PsychiatristGeneralInformationEdit from "./PsychiatristProfileEdit/PsychiatristGeneralInformationEdit";
+import PsychiatristClinicDetailsEdit from "./PsychiatristProfileEdit/PsychiatristClinicDetailsEdit";
+import PsychiatristAvailabilityEdit from "./PsychiatristProfileEdit/PsychiatristAvailabilityEdit";
+import PsychiatristQualificationDetailsEdit from "./PsychiatristProfileEdit/PsychiatristQualificationDetailsEdit";
+import PsychiatristReceptionistDetailsEdit from "./PsychiatristProfileEdit/PsychiatristReceptionistDetailsEdit";
+
+// Patient Profile View
+import PatientGeneralInformationView from "./PatientProfile/PatientGeneralInformationView";
+
+// Patient Profile Edit
+import PatientGeneralInformationEdit from "./PatientProfileEdit/PatientGeneralInformationEdit";
+import PatientWorkDetailsEdit from "./PatientProfileEdit/PatientWorkDetailsEdit";
+import PatientEmergencyContactEdit from "./PatientProfileEdit/PatientEmergencyContactEdit";
+import PatientDigitalJournalView from "./PatientProfile/PatientDigitalJournalView";
+import PatientPostSessionNotesView from "./PatientProfile/PatientPostSessionNotesView";
+import PatientPrescriptionView from "./PatientProfile/PatientPrescriptionView";
+import PatientSessionSynopsisView from "./PatientProfile/PatientSessionSynopsisView";
+import PatientHomeworkView from "./PatientProfile/PatientHomeworkView";
 
 const App = () => (
   <Router>
@@ -75,6 +88,43 @@ const App = () => (
         <Route
           path="/psychiatrist-receptionist-details-edit"
           component={PsychiatristReceptionistDetailsEdit}
+        />
+
+        {/* Patient Profile View */}
+        <Route
+          path="/patient-general-information"
+          component={PatientGeneralInformationView}
+        />
+        <Route
+          path="/patient-digital-journal"
+          component={PatientDigitalJournalView}
+        />
+        <Route
+          path="/patient-post-session-notes"
+          component={PatientPostSessionNotesView}
+        />
+        <Route
+          path="/patient-prescription"
+          component={PatientPrescriptionView}
+        />
+        <Route
+          path="/patient-session-synopsis"
+          component={PatientSessionSynopsisView}
+        />
+        <Route path="/patient-homework" component={PatientHomeworkView} />
+
+        {/* Patient Profile Edit */}
+        <Route
+          path="/patient-general-information-edit"
+          component={PatientGeneralInformationEdit}
+        />
+        <Route
+          path="/patient-work-details-edit"
+          component={PatientWorkDetailsEdit}
+        />
+        <Route
+          path="/patient-emergency-contact-edit"
+          component={PatientEmergencyContactEdit}
         />
       </Switch>
     </Layout>

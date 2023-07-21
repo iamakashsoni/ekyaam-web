@@ -611,7 +611,8 @@ body {
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.05);
 }
 
-a:hover, a:focus{
+a:hover,
+a:focus {
   text-decoration: none;
   color: var(--color-gray-400);
 }
@@ -948,6 +949,11 @@ input::placeholder {
   padding: 0 var(--padding-3xs) var(--padding-3xs) var(--padding-3xs);
 }
 
+.buttons button {
+  border: none;
+  background: transparent;
+}
+
 .profile-image {
   border-radius: 70px;
   width: 78px;
@@ -1128,7 +1134,7 @@ input::placeholder {
 .SearchResultsPopup {
   position: absolute;
   top: 60px;
-  left: 75.5%;
+  left: 74.15%;
   transform: translateX(-50%);
   display: block;
   /* z-index: 1; */
@@ -1645,6 +1651,25 @@ input::placeholder {
   top: 13.6%;
   right: 1%;
   height: 558px;
+}
+
+.patient-session {
+  top: 20.3%;
+}
+
+.remove-margin-top {
+  margin-top: -15px !important;
+}
+
+.emegency-container {
+  border-radius: var(--br-base);
+  background-color: var(--color-gray-100);
+  /* box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); */
+  backdrop-filter: blur(50px);
+  border: 2px solid var(--color-gray-100);
+  box-sizing: border-box;
+  padding: var(--padding-base);
+  margin-bottom: 14px;
 }
 
 .session-content {
@@ -2821,6 +2846,18 @@ input[type="checkbox"]:checked {
   width: 330px;
 }
 
+.signout-popup {
+  width: 380px !important;
+}
+.signout-popup p {
+  font-weight: 600 !important;
+  font-size: var(--font-size-xl) !important;
+  padding: var(--br-3xs);
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+
 .adduserPopupContent {
   flex-direction: column;
   align-items: center;
@@ -2907,6 +2944,7 @@ input[type="checkbox"]:checked {
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-family: var(--font-quicksand);
 }
 
 .popup-content::-webkit-scrollbar {
@@ -3050,6 +3088,39 @@ input[type="checkbox"]:checked {
 .current-date-box {
   background-color: #7a6ba3;
   color: var(--color-white);
+}
+
+.user-information-container.blur {
+  filter: blur(5px);
+  border: 1px solid #ccc;
+}
+
+.blur-overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.blur-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.blur-overlay-text {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-black);
+  word-wrap: break-word;
+  width: 250px;
+  margin-bottom: 20px;
 }
 
 /* mobile-view */
