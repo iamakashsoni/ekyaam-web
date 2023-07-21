@@ -46,7 +46,7 @@ const PatientDigitalJournalView = () => {
                 <div className="blur-overlay">
                     <div className="blur-overlay-content complete-task">
                         <div className="blur-overlay-text">Request Kiran Rathi to Access Digital Journal</div>
-                        <button onClick={handleRemoveBlur}>
+                        <button className="mt-3" onClick={handleRemoveBlur}>
                             Send Request
                         </button>
                     </div>

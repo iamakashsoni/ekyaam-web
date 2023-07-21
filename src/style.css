@@ -3104,9 +3104,9 @@ input[type="checkbox"]:checked {
 }
 
 .blur-overlay {
-  position: fixed;
+  position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -3120,9 +3120,56 @@ input[type="checkbox"]:checked {
   color: var(--color-black);
   word-wrap: break-word;
   width: 250px;
-  margin-bottom: 20px;
+}
+.blur-overlay-subtext {
+  margin-top: -20px;
+  padding: 0;
 }
 
+.vault-container {
+  top: 35%;
+  left: 35% !important;
+  background: linear-gradient(180deg, #eeebff, #fbe7e4), #fff;
+  width: 380px;
+  height: 280px;
+  border-radius: var(--br-13xl);
+  font-size: var(--font-size-base);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: var(--font-quicksand);
+}
+
+.vault-container .blur-overlay-content {
+  gap: var(--gap-5xl);
+}
+
+.pin-input-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  /* margin: 0 10px 30px 10px; */
+  font-size: var(--font-size-base);
+  text-align: center;
+}
+
+.pin-input-container input {
+  width: 60px;
+  height: 50px;
+  font-size: var(--font-size-base);
+  text-align: center;
+  border: 2px solid var(--color-steelblue);
+  background-color: var(--color-gray-1200);
+  border-radius: 9.23px;
+  box-sizing: border-box;
+  margin: 0 10px;
+}
+
+.pin-input-container input::placeholder {
+  text-align: center;
+  font-weight: 500;
+  opacity: 0.2;
+}
 /* mobile-view */
 @media (max-width: 768px) {
   .main-content {
