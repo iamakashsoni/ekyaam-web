@@ -1321,7 +1321,7 @@ input::placeholder {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .stats-card {
@@ -2759,7 +2759,7 @@ input[type="checkbox"]:checked {
 
 .timing-section .col-md-3 {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .day-section {
@@ -2770,7 +2770,7 @@ input[type="checkbox"]:checked {
 
 .day-section .col-md-3 {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .day-section label {
@@ -3016,10 +3016,10 @@ input[type="checkbox"]:checked {
 .date-options-container {
   font-size: 12px;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   gap: 4px;
   padding: 0;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right: 16%;
 }
 

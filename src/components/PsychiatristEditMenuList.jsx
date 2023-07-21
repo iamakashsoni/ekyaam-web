@@ -45,8 +45,8 @@ const PsychiatristEditMenuList = () => {
         <div className="user-menu-list">
             <div className="menu-list-container">
                 <div className="menu-list">
-                    {menuItems.map((menuItem, index) => (
-                        <MenuItem key={index} title={menuItem.title} path={menuItem.path} />
+                    {menuItems.map((menuItem) => (
+                        <MenuItem key={menuItem.title} title={menuItem.title} path={menuItem.path} />
                     ))}
                 </div>
             </div>
