@@ -5,6 +5,8 @@ import Layout from "./layout/Layout";
 // Main
 import Dashboard from "./Page-Main/Dashboard";
 import ManagePatient from "./Page-Main/ManagePatient";
+import ManageTherapist from "./Page-Main/ManageTherapist";
+import Chats from "./Page-Main/Chats";
 
 // Psyschiatrist Profile
 import PsychiatristGeneralInformation from "./Page-PsychiatristProfile/PsychiatristGeneralInformation";
@@ -42,6 +44,8 @@ const App = () => (
         {/* Main */}
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/manage-patients" component={ManagePatient} />
+        <Route exact path="/manage-therapists" component={ManageTherapist} />
+        <Route exact path="/chats" component={Chats} />
 
         {/* Psyschiatrist Profile */}
         <Route

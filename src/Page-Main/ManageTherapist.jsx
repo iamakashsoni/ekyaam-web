@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import PageFrameTitle from "../components/PageFrameTitle";
 import PageGuide from "../components/PageGuide";
 import profileImage from "../images/profile.png";
-import messageIcon from "../images/messageIcon.svg"
+import messageIcon from "../images/messageIcon.svg";
 
-const ManagePatient = () => {
+const ManageTherapist = () => {
   const tabs = [
-    { key: "active-tab", label: "Active", count: 531 },
-    { key: "inactive-tab", label: "Inactive", count: 431 },
-    { key: "incomplete-tab", label: "Incomplete Records", count: 31 },
-    { key: "due-tab", label: "Prescription Due", count: 100 },
+    { key: "active-tab", label: "Active", count: 5 },
+    { key: "inactive-tab", label: "Inactive", count: 4 },
   ];
 
   const [activeTab, setActiveTab] = useState("active-tab");
@@ -18,56 +16,49 @@ const ManagePatient = () => {
     setActiveTab(tabKey);
   };
 
-  const patientList = [
+  const therapistList = [
     {
       id: 1,
-      name: "Dr. Ramesh Thakur",
+      name: "Vishwanath Surve",
+      specialization: "Physical Therapist",
       phoneNumber: "+91 74002 96867",
-      prevSessionDate: "Tuesday, November 05, 2023",
-      assignedTherapists: "Vishwanath Surve, Mayur Tupe",
-      visitFrequency: "Bi-weekly",
-      nextSessionDate: "Tuesday, November 05, 2023",
+      assignedPatients: 6,
+      involvedInSessions: 18,
     },
     {
       id: 2,
-      name: "Dr. Jane Doe",
+      name: "Mayur Tupe",
+      specialization: "Occupational Therapist",
       phoneNumber: "+91 98765 43210",
-      prevSessionDate: "Wednesday, November 06, 2023",
-      assignedTherapists: "John Smith, Emily Johnson",
-      visitFrequency: "Weekly",
-      nextSessionDate: "Wednesday, November 06, 2023",
+      assignedPatients: 4,
+      involvedInSessions: 12,
     },
     {
       id: 3,
-      name: "Dr. Jane Doe",
+      name: "John Smith",
+      specialization: "Speech Therapist",
       phoneNumber: "+91 98765 43210",
-      prevSessionDate: "Wednesday, November 06, 2023",
-      assignedTherapists: "John Smith, Emily Johnson",
-      visitFrequency: "Weekly",
-      nextSessionDate: "Wednesday, November 06, 2023",
+      assignedPatients: 5,
+      involvedInSessions: 15,
     },
   ];
 
-  const scheduleSession = (patientId) => {
-    console.log("Scheduling session for patient ID:", patientId);
+  const scheduleSession = (therapistId) => {
+    console.log("Scheduling session for therapist ID:", therapistId);
   };
 
-  const addPrescription = (patientId) => {
-    console.log("Adding prescription for patient ID:", patientId);
-  };
-
-  const updateUserRecord = (patientId) => {
-    console.log("Updating record for patient ID:", patientId);
+  const updateUserRecord = (therapistId) => {
+    console.log("Updating record for therapist ID:", therapistId);
   };
 
   return (
     <div className="main-content container-fluid">
       <div className="row align-items-md-stretch">
         <div className="page-frame-title col-md-6">
-          <PageFrameTitle title="Manage Patients" />
+          <PageFrameTitle title="Manage Therapists" />
         </div>
         <div className="page-guide col-md-6">
-          <PageGuide guideText="Dashboard > Patients" />
+          <PageGuide guideText="Dashboard > Therapists" />
         </div>
       </div>
       <div>
@@ -91,7 +82,7 @@ const ManagePatient = () => {
               {tab.key === "active-tab" && (
                 <div className="tab_header_box">
                   <div className="search-container">
-                    <input type="search" placeholder="Enter name to search patient" />
+                    <input type="search" placeholder="Enter name to search therapist" />
                     <span className="search-icon"></span>
                   </div>
                   <div >
@@ -111,44 +102,38 @@ const ManagePatient = () => {
                   <table className="table">
                     <thead>
                       <tr className="table-header-row">
-                        <th>Patient Name</th>
-                        <th>Previous Session Date</th>
-                        <th>Assigned Therapist</th>
-                        <th>Visit Frequency</th>
-                        <th>Next Session Date</th>
-                        <th>Actions</th>
+                        <th className="text-center">Therapist Name</th>
+                        <th className="text-center">Specialization</th>
+                        <th className="text-center">Mobile Number</th>
+                        <th className="text-center">Assigned Patients</th>
+                        <th className="text-center">Involved In Sessions</th>
+                        <th className="text-center">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {patientList.map((patient) => (
-                        <tr key={patient.id}>
+                      {therapistList.map((therapist) => (
+                        <tr key={therapist.id}>
                           <td>
                             <div className="user-heading" style={{ margin: 0, padding: 0, height: "auto" }}>
                               <img className="user-image" alt="" src={profileImage} style={{ width: 50, height: 50 }} />
                               <div className="profile">
                                 <div className="username">
-                                  <span style={{ fontSize: 16 }}>{patient.name}</span>
-                                </div>
-                                <div className="user-number">
-                                  <span>{patient.phoneNumber}</span>
+                                  <span style={{ fontSize: 16 }}>{therapist.name}</span>
                                 </div>
                               </div>
                               <img src={messageIcon} className="messageIcon" alt="" style={{ width: 35, height: 35 }} />
                             </div>
                           </td>
-                          <td className="wrap-text">{patient.prevSessionDate}</td>
-                          <td className="wrap-text">{patient.assignedTherapists}</td>
-                          <td>{patient.visitFrequency}</td>
-                          <td className="wrap-text">{patient.nextSessionDate}</td>
+                          <td className="wrap-text">{therapist.specialization}</td>
+                          <td className="wrap-text">{therapist.phoneNumber}</td>
+                          <td className="text-center">{therapist.assignedPatients}</td>
+                          <td className="text-center">{therapist.involvedInSessions}</td>
                           <td>
                             <div className="task-overdue actionBtn">
-                              <button onClick={() => scheduleSession(patient.id)}>Schedule Session</button>
+                              <button onClick={() => scheduleSession(therapist.id)}>Schedule Session</button>
                             </div>
                             <div className="task-overdue actionBtn">
-                              <button onClick={() => addPrescription(patient.id)}>Add Prescription</button>
-                            </div>
-                            <div className="task-overdue actionBtn">
-                              <button onClick={() => updateUserRecord(patient.id)}>Update Record</button>
+                              <button onClick={() => updateUserRecord(therapist.id)}>Update Profile</button>
                             </div>
                           </td>
                         </tr>
@@ -164,7 +149,7 @@ const ManagePatient = () => {
                   {tab.key === "inactive-tab" && (
                     <div className="tab_header_box">
                       <div className="search-container">
-                        <input type="search" placeholder="Enter name to search patient" />
+                        <input type="search" placeholder="Enter name to search therapist" />
                         <span className="search-icon"></span>
                       </div>
                       <div >
@@ -182,44 +167,38 @@ const ManagePatient = () => {
                   <table className="table">
                     <thead>
                       <tr className="table-header-row">
-                        <th>Patient Name</th>
-                        <th>Previous Session Date</th>
-                        <th>Assigned Therapist</th>
-                        <th>Visit Frequency</th>
-                        <th>Next Session Date</th>
-                        <th>Actions</th>
+                        <th className="text-center">Therapist Name</th>
+                        <th className="text-center">Specialization</th>
+                        <th className="text-center">Mobile Number</th>
+                        <th className="text-center">Assigned Patients</th>
+                        <th className="text-center">Involved In Sessions</th>
+                        <th className="text-center">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {patientList.map((patient) => (
-                        <tr key={patient.id}>
+                      {therapistList.map((therapist) => (
+                        <tr key={therapist.id}>
                           <td>
                             <div className="user-heading" style={{ margin: 0, padding: 0, height: "auto" }}>
                               <img className="user-image" alt="" src={profileImage} style={{ width: 50, height: 50 }} />
                               <div className="profile">
                                 <div className="username">
-                                  <span style={{ fontSize: 16 }}>{patient.name}</span>
-                                </div>
-                                <div className="user-number">
-                                  <span>{patient.phoneNumber}</span>
+                                  <span style={{ fontSize: 16 }}>{therapist.name}</span>
                                 </div>
                               </div>
                               <img src={messageIcon} className="messageIcon" alt="" style={{ width: 35, height: 35 }} />
                             </div>
                           </td>
-                          <td className="wrap-text">{patient.prevSessionDate}</td>
-                          <td className="wrap-text">{patient.assignedTherapists}</td>
-                          <td>{patient.visitFrequency}</td>
-                          <td className="wrap-text text-danger">Not Scheduled</td>
+                          <td className="wrap-text text-danger">Inactive</td>
+                          <td className="wrap-text">{therapist.phoneNumber}</td>
+                          <td className="text-center">{therapist.assignedPatients}</td>
+                          <td className="text-center">{therapist.involvedInSessions}</td>
                           <td>
                             <div className="task-overdue actionBtn">
-                              <button onClick={() => scheduleSession(patient.id)}>Schedule Session</button>
+                              <button onClick={() => scheduleSession(therapist.id)}>Schedule Session</button>
                             </div>
                             <div className="task-overdue actionBtn">
-                              <button onClick={() => addPrescription(patient.id)}>Add Prescription</button>
-                            </div>
-                            <div className="task-overdue actionBtn">
-                              <button onClick={() => updateUserRecord(patient.id)}>Update Record</button>
+                              <button onClick={() => updateUserRecord(therapist.id)}>Update Profile</button>
                             </div>
                           </td>
                         </tr>
@@ -236,4 +215,4 @@ const ManagePatient = () => {
   );
 };
 
-export default ManagePatient;
+export default ManageTherapist;

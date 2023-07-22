@@ -35,7 +35,7 @@ const ProfileItem = ({ title, children }) => {
     );
 };
 
-const ProfileItemContainer = ({ className }) => {
+const ChatProfileItemContainer = ({ className }) => {
     return (
         <div className={`session-container profile-page ${className}`}>
             <div className="profile">
@@ -93,15 +93,24 @@ const ProfileItemContainer = ({ className }) => {
                             <span>296, Ravi Nivas, Sec. 30-A, Vashi, Navi Mumbai, 400703</span>
                         </div>
                     </div>
+                </ProfileItem>
+
+                <ProfileItem title="Patient History">
                     <div className="description-details">
                         <div className="description-header">
-                            <span>Qualification Details</span>
+                            <span>Emergency Contact</span>
                         </div>
                         <div className="description-item">
-                            <span>M.D. (Psychology)</span>
+                            <img alt="" src={callBack} />
+                            <span>+91 98765 43210</span>
                         </div>
                         <div className="description-item">
-                            <span>M.M.B.S</span>
+                            <img alt="" src={callBack} />
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div className="description-item">
+                            <img alt="" src={placeBlackIcon} />
+                            <span>296, Ravi Nivas, Sec. 30-A, Vashi, Navi Mumbai, 400703</span>
                         </div>
                     </div>
                 </ProfileItem>
@@ -129,41 +138,19 @@ const ProfileItemContainer = ({ className }) => {
                         </div>
                     </div>
                 </ProfileItem>
-
-                <ProfileItem title="Upcoming Session">
-                    <div className="current-session-container">
-                        <div className="current-session-title-container">
-                            <div className="session-time">
-                                <div className="start-time">11:00 AM</div>
-                                <div className="end-time">12:00 PM</div>
-                            </div>
-                            <div className="session-divider"></div>
-                            <div className="current-session-detail">
-                                <div className="current-session-patient-name">Kiran Rathi
-                                    <div className="previous-session-details">
-                                        <p className="previous-session-details-heading">Previous session:</p>
-                                        <p className="previous-session-details-date">Tuesday, March 5, 2023</p>
-                                    </div>
-                                </div>
-                            </div>
+                <ProfileItem title="Service Types">
+                    <div className="description-details">
+                        <div className="description-header">
+                            <span>Emergency Contact</span>
                         </div>
-                        <div className="other-participants-container">
-                            <div className="other-participants-title">
-                                <p className="other-participants-text">Other Participants</p>
-                            </div>
-                            <div className="other-participants-image">
-                                <img className="other-participants-image-item1" alt="" src={profileImage} />
-
-                                <img className="other-participants-image-item2" alt="" src={profileImage} />
-
-                                <img className="other-participants-image-item2" alt="" src={profileImage} />
-                            </div>
+                        <div className="description-item">
+                            <img alt="" src={callBack} />
+                            <span>+91 98765 43210</span>
                         </div>
                     </div>
-                    <button className="start-session-btn1">Start Session</button>
                 </ProfileItem>
 
-                <ProfileItem title="Subscription">
+                <ProfileItem title="Invite Expert / Confidante">
                     <div className="description-details">
                         <div className="description-header">
                             <span>Emergency Contact</span>
@@ -179,4 +166,4 @@ const ProfileItemContainer = ({ className }) => {
     );
 };
 
-export default ProfileItemContainer;
+export default ChatProfileItemContainer;

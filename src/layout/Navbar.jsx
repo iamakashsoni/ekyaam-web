@@ -26,7 +26,7 @@ const sidebarConfig = [
   { id: 2, iconSvg: addPrescriptionIcon, text: "Add Prescription", link: "/add-prescription" },
   { id: 3, iconSvg: postSessionNotesIcon, text: "Post Session Notes", link: "/post-session-notes" },
   { id: 4, iconSvg: pendingTasksIcon, text: "Pending Tasks", link: "/pending-tasks" },
-  { id: 5, iconSvg: therapistsIcon, text: "Therapists", link: "/therapists" },
+  { id: 5, iconSvg: therapistsIcon, text: "Therapists", link: "/manage-therapists" },
   { id: 6, iconSvg: patientsIcon, text: "Patients", link: "/manage-patients" },
   { id: 7, iconSvg: calendarIcon, text: "Calendar", link: "/calendar" },
   { id: 8, iconSvg: reportsIcon, text: "Reports", link: "/reports" },
