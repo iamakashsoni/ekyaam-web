@@ -5,6 +5,8 @@ import profileImage from "../images/profile.png";
 import ChatProfileItemContainer from "../components/ChatProfileItemContainer";
 import communicationIcon from "../images/communication.svg";
 import attachmentIcon from "../images/attachment.svg"
+import clinicImage from "../images/clinic.jpg"
+import playButton from "../images/play.png"
 
 const TabButton = ({ tab, activeTab, onClick }) => (
   <div
@@ -16,7 +18,16 @@ const TabButton = ({ tab, activeTab, onClick }) => (
   </div>
 );
 
+
+const ChatMessage = ({ message, isSent }) => (
+  <div className={`chat-message ${isSent ? "sent" : "received"}`}>
+    {message}
+  </div>
+);
+
 const Chats = () => {
+
+
   const tabs = [
     { key: "patient-tab", label: "Patients" },
     { key: "clinic-tab", label: "Clinic Users" },
@@ -27,6 +38,26 @@ const Chats = () => {
   const changeTab = (tabKey) => {
     setActiveTab(tabKey);
   };
+
+  const messages = [
+    { id: 1, message: "Hello there!", isSent: true },
+    { id: 2, message: "Hi! How can I help you?", isSent: false },
+    { id: 3, message: "I have a question about my appointment.", isSent: true },
+    { id: 4, message: "Sure, I'm here to assist you.", isSent: false },
+    { id: 5, message: "Thank you!", isSent: true },
+    { id: 6, message: "Hello there!", isSent: true },
+    { id: 7, message: "Hi! How can I help you?", isSent: false },
+    { id: 8, message: "I have a question about my appointment.", isSent: true },
+    { id: 9, message: "Sure, I'm here to assist you.", isSent: false },
+    { id: 10, message: "Thank you!", isSent: true },
+  ];
+
+  const renderMessages = () => {
+    return messages.map((msg) => (
+      <ChatMessage key={msg.id} message={msg.message} isSent={msg.isSent} />
+    ));
+  };
+
 
   return (
     <div className="main-content container-fluid">
@@ -122,7 +153,6 @@ const Chats = () => {
           </div>
         ))}
       </div>
-      {/* Chat */}
       <div className="chat-screen">
         <div className="chat-header">
           <img className="chat-profile-icon" alt="" src={profileImage} />
@@ -130,7 +160,18 @@ const Chats = () => {
           <div className="chat-search-icon" />
         </div>
         <div className="chat-message-container">
-          
+          {renderMessages()}
+          <div className="chat-attachment-container">
+            <img className="chat-attachment-icon" alt="Attachment" src={clinicImage} />
+          </div>
+          <div className="chat-audio-recording">
+            <div className="chat-audio-info">
+              <img className="chat-audio-play-pause-icon" alt="Play/Pause" src={playButton} />
+              <div className="chat-audio-progress-bar">
+                <div className="chat-audio-progress-line" style={{ width: '50%' }} />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="chat-input-container">
           <div className="chat-message-input">

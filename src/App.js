@@ -36,6 +36,7 @@ import PatientPostSessionNotesView from "./Page-PatientProfile/PatientPostSessio
 import PatientPrescriptionView from "./Page-PatientProfile/PatientPrescriptionView";
 import PatientSessionSynopsisView from "./Page-PatientProfile/PatientSessionSynopsisView";
 import PatientHomeworkView from "./Page-PatientProfile/PatientHomeworkView";
+import Calendar from "./Page-Main/Calendar";
 
 const App = () => (
   <Router>
@@ -46,6 +47,7 @@ const App = () => (
         <Route exact path="/manage-patients" component={ManagePatient} />
         <Route exact path="/manage-therapists" component={ManageTherapist} />
         <Route exact path="/chats" component={Chats} />
+        <Route exact path="/calendar" component={Calendar} />
 
         {/* Psyschiatrist Profile */}
         <Route
