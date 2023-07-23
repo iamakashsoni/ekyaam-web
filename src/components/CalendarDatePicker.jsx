@@ -79,6 +79,20 @@ const CalendarDatePicker = () => {
       patientName: "Kiran Rathi",
       previousSessionDate: "Tuesday, March 5, 2023",
     },
+    {
+      id: 4,
+      startTime: "11:00 AM",
+      endTime: "12:00 PM",
+      patientName: "Kiran Rathi",
+      previousSessionDate: "Tuesday, March 5, 2023",
+    },
+    {
+      id: 5,
+      startTime: "11:00 AM",
+      endTime: "12:00 PM",
+      patientName: "Kiran Rathi",
+      previousSessionDate: "Tuesday, March 5, 2023",
+    },
   ];
   return (
     <div className="calendar-date-picker-container">
@@ -91,7 +105,7 @@ const CalendarDatePicker = () => {
                 {formatDate(currentDate)}
               </div>
             </div>
-            <div className="col-md-5 col-sm-12 p-0">
+            <div className="col-md-5 col-sm-12">
               <span className="calendar-today-option">Today</span>
             </div>
           </div>
@@ -130,7 +144,7 @@ const CalendarDatePicker = () => {
         <div className="next-session">
           {nextSessions.length > 0 ? (
             nextSessions.map((session) => (
-              <div className="next-session-container" key={session.id}>
+              <div className="calendar-sessions-container" key={session.id}>
                 <div className="current-session-title-container">
                   <div className="session-time">
                     <div className="start-time">{session.startTime}</div>

@@ -80,7 +80,7 @@ const PsychiatristGeneralInformation = () => {
         {
             id: 1,
             title: "Psychiatrist at Fortise Hospital",
-            details: "Experience details with achievements experience details with achievements experience details with achievements"
+            details: "Experience details with achievements experiences"
         }
     ];
 
@@ -216,8 +216,8 @@ const PsychiatristGeneralInformation = () => {
                                 <div className="contact-details">
                                     {professionalExperience.map((experience) => (
                                         <div className="user-number" key={experience.id}>
-                                            <span>{experience.title}</span>
-                                            <p>{experience.details}</p>
+                                            <span>{experience.title} <br /></span>
+                                            <span>{experience.details}</span>
                                         </div>
                                     ))}
                                 </div>

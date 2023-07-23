@@ -23,10 +23,10 @@ const ManagePatient = () => {
       id: 1,
       name: "Dr. Ramesh Thakur",
       phoneNumber: "+91 74002 96867",
-      prevSessionDate: "Tuesday, November 05, 2023",
+      prevSessionDate: "Wednesday, November 05, 2023",
       assignedTherapists: "Vishwanath Surve, Mayur Tupe",
       visitFrequency: "Bi-weekly",
-      nextSessionDate: "Tuesday, November 05, 2023",
+      nextSessionDate: "Wednesday, November 05, 2023",
     },
     {
       id: 2,
@@ -102,7 +102,7 @@ const ManagePatient = () => {
                       <option value={15}>15</option>
                       <option>All</option>
                     </select>
-                    <label>Enrties</label>
+                    <label>Entries</label>
                   </div>
                 </div>
               )}
@@ -116,7 +116,7 @@ const ManagePatient = () => {
                         <th>Assigned Therapist</th>
                         <th>Visit Frequency</th>
                         <th>Next Session Date</th>
-                        <th>Actions</th>
+                        <th className="text-center">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -127,7 +127,7 @@ const ManagePatient = () => {
                               <img className="user-image" alt="" src={profileImage} style={{ width: 50, height: 50 }} />
                               <div className="profile">
                                 <div className="username">
-                                  <span style={{ fontSize: 16 }}>{patient.name}</span>
+                                  <span style={{ fontSize: 14 }}>{patient.name}</span>
                                 </div>
                                 <div className="user-number">
                                   <span>{patient.phoneNumber}</span>
@@ -175,7 +175,7 @@ const ManagePatient = () => {
                           <option value={15}>15</option>
                           <option>All</option>
                         </select>
-                        <label>Enrties</label>
+                        <label>Entries</label>
                       </div>
                     </div>
                   )}
@@ -198,7 +198,7 @@ const ManagePatient = () => {
                               <img className="user-image" alt="" src={profileImage} style={{ width: 50, height: 50 }} />
                               <div className="profile">
                                 <div className="username">
-                                  <span style={{ fontSize: 16 }}>{patient.name}</span>
+                                  <span style={{ fontSize: 14 }}>{patient.name}</span>
                                 </div>
                                 <div className="user-number">
                                   <span>{patient.phoneNumber}</span>

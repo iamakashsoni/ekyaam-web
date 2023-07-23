@@ -1,13 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import MenuItem from "./MenuItem";
+import { Link, useLocation } from "react-router-dom";
 import profileImage from "../images/profile.png";
 import postSessionNotesIcon from "../images/post-session-notes.svg";
 import pendingTaskIcon from "../images/pending-tasks.svg";
 import prescriptionIcon from "../images/add-prescription.svg";
 
+
+const MenuItem = ({ icon, title, path }) => {
+  const location = useLocation();
+  const isActive = location.pathname === path;
+
+  return (
+    <Link to={path}>
+      <div className={`menu-item ${isActive ? "menu-item-selected text-white" : ""}`}>
+        <img src={icon} alt="" />
+        <span>{title}</span>
+        {/* <img className="right-arrow-icon" alt="" src={rightArrowIcon} /> */}
+      </div>
+    </Link>
+  );
+};
+
 const PsychiatristMenuList = () => {
-  
   const menuItems = [
     {
       id: 1,
@@ -66,12 +80,16 @@ const PsychiatristMenuList = () => {
           </div>
         </div>
       </div>
+
       <div className="menu-list-container">
         <div className="menu-list">
           {menuItems.map((item) => (
-            <Link to={item.path} key={item.id}>
-              <MenuItem icon={item.icon} title={item.title} />
-            </Link>
+            <MenuItem
+              key={item.id}
+              icon={item.icon}
+              title={item.title}
+              path={item.path}
+            />
           ))}
         </div>
       </div>

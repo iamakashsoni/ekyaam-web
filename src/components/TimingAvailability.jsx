@@ -66,7 +66,7 @@ const TimingAvailability = () => {
         }));
     };
     return (
-        <div className="qualification-container">
+        <div className="qualifications-container">
             <div className="row timing-section justify-content-start">
                 <div className="col-md-3">
                     <label className="form-check-inline">

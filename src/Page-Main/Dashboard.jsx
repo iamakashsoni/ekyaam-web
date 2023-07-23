@@ -52,54 +52,62 @@ const Dashboard = () => {
             </button>
           </div>
         </div>
-        <StatsCardContainer />
-        <div className="frame-parent">
-          <FrameContainer headerIconSrc={healthIcon} headerText="Available Therapists">
-            <div className="row">
-              <div className="col-3 col-md-3">
-                <ProfileCard iconSrc={profileImage} firstName="Madhu" lastName="Pandey" />
-              </div>
-              <div className="col-3 col-md-3">
-                <ProfileCard iconSrc={profileImage} firstName="John" lastName="Doe" />
-              </div>
-              <div className="col-3 col-md-3">
-                <ProfileCard iconSrc={profileImage} firstName="Emma" lastName="Smith" />
-              </div>
-              <div className="col-3 col-md-3">
-                <ProfileCard iconSrc={profileImage} firstName="Emma" lastName="Smith" />
-              </div>
-              <div className="col-6 col-md-3 d-none d-md-block">
-                <ProfileCard iconSrc={profileImage} firstName="Sarah" lastName="Johnson" />
-              </div>
-              <div className="col-6 col-md-3 d-none d-md-block">
-                <ProfileCard iconSrc={profileImage} firstName="Michael" lastName="Brown" />
-              </div>
-              <div className="col-6 col-md-3 d-none d-md-block">
-                <ProfileCard iconSrc={profileImage} firstName="Olivia" lastName="Davis" />
-              </div>
-              <div className="col-6 col-md-3 d-none d-md-block">
-                <ProfileCard iconSrc={profileImage} firstName="Daniel" lastName="Wilson" />
-              </div>
+        <div className="row">
+          <div className="col-md-9">
+            <StatsCardContainer />
+            <div className="frame-parent">
+              <FrameContainer headerIconSrc={healthIcon} headerText="Available Therapists">
+                <div className="row">
+                  <div className="col-3 col-md-3">
+                    <ProfileCard iconSrc={profileImage} firstName="Madhu" lastName="Pandey" />
+                  </div>
+                  <div className="col-3 col-md-3">
+                    <ProfileCard iconSrc={profileImage} firstName="John" lastName="Doe" />
+                  </div>
+                  <div className="col-3 col-md-3">
+                    <ProfileCard iconSrc={profileImage} firstName="Emma" lastName="Smith" />
+                  </div>
+                  <div className="col-3 col-md-3">
+                    <ProfileCard iconSrc={profileImage} firstName="Emma" lastName="Smith" />
+                  </div>
+                  <div className="col-6 col-md-3 d-none d-md-block">
+                    <ProfileCard iconSrc={profileImage} firstName="Sarah" lastName="Johnson" />
+                  </div>
+                  <div className="col-6 col-md-3 d-none d-md-block">
+                    <ProfileCard iconSrc={profileImage} firstName="Michael" lastName="Brown" />
+                  </div>
+                  <div className="col-6 col-md-3 d-none d-md-block">
+                    <ProfileCard iconSrc={profileImage} firstName="Olivia" lastName="Davis" />
+                  </div>
+                  <div className="col-6 col-md-3 d-none d-md-block">
+                    <ProfileCard iconSrc={profileImage} firstName="Daniel" lastName="Wilson" />
+                  </div>
+                </div>
+              </FrameContainer>
+              <FrameContainer headerIconSrc={messageIcon} headerCount="3" headerText="Unread Chats">
+                <div className="row">
+                  <div className="col-12">
+                    <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
+                  </div>
+                  <div className="col-12">
+                    <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
+                  </div>
+                  <div className="col-12 d-none d-md-block">
+                    <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
+                  </div>
+                  <div className="col-12 d-none d-md-block">
+                    <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
+                  </div>
+                </div>
+              </FrameContainer>
             </div>
-          </FrameContainer>
-          <FrameContainer headerIconSrc={messageIcon} headerCount="3" headerText="Unread Chats">
-            <div className="row">
-              <div className="col-12">
-                <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
-              </div>
-              <div className="col-12">
-                <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
-              </div>
-              <div className="col-12 d-none d-md-block">
-                <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
-              </div>
-              <div className="col-12 d-none d-md-block">
-                <PatientMessage iconSrc={profileImage} name="Vishwanath Sawant" who="Patient" />
-              </div>
-            </div>
-          </FrameContainer>
+          </div>
+          <div className="col-md-3">
+            <SessionContainer className="below-session-container" />
+          </div>
         </div>
-        <SessionContainer className="below-session-container" />
+
+
       </div>
 
       {isAddUserPopupVisible && (

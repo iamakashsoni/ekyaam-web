@@ -69,7 +69,8 @@ const ManageTherapist = () => {
               className={`tab-button ${activeTab === tab.key ? "active" : ""}`}
               onClick={() => changeTab(tab.key)}
             >
-              <span>{`${tab.count} ${tab.label} `}</span>
+              <span className="tab-count">{`${tab.count}`} </span>
+              <span>{`${tab.label} `}</span>
             </div>
           ))}
         </div>
@@ -93,7 +94,7 @@ const ManageTherapist = () => {
                       <option value={15}>15</option>
                       <option>All</option>
                     </select>
-                    <label>Enrties</label>
+                    <label>Entries</label>
                   </div>
                 </div>
               )}
@@ -118,7 +119,7 @@ const ManageTherapist = () => {
                               <img className="user-image" alt="" src={profileImage} style={{ width: 50, height: 50 }} />
                               <div className="profile">
                                 <div className="username">
-                                  <span style={{ fontSize: 16 }}>{therapist.name}</span>
+                                  <span style={{ fontSize: 14 }}>{therapist.name}</span>
                                 </div>
                               </div>
                               <img src={messageIcon} className="messageIcon" alt="" style={{ width: 35, height: 35 }} />
@@ -160,7 +161,7 @@ const ManageTherapist = () => {
                           <option value={15}>15</option>
                           <option>All</option>
                         </select>
-                        <label>Enrties</label>
+                        <label>Entries</label>
                       </div>
                     </div>
                   )}
@@ -168,8 +169,8 @@ const ManageTherapist = () => {
                     <thead>
                       <tr className="table-header-row">
                         <th className="text-center">Therapist Name</th>
-                        <th className="text-center">Specialization</th>
-                        <th className="text-center">Mobile Number</th>
+                        <th className="">Specialization</th>
+                        <th className="">Mobile Number</th>
                         <th className="text-center">Assigned Patients</th>
                         <th className="text-center">Involved In Sessions</th>
                         <th className="text-center">Actions</th>
@@ -177,13 +178,13 @@ const ManageTherapist = () => {
                     </thead>
                     <tbody>
                       {therapistList.map((therapist) => (
-                        <tr key={therapist.id}>
+                        <tr key={therapist.id} >
                           <td>
                             <div className="user-heading" style={{ margin: 0, padding: 0, height: "auto" }}>
                               <img className="user-image" alt="" src={profileImage} style={{ width: 50, height: 50 }} />
                               <div className="profile">
                                 <div className="username">
-                                  <span style={{ fontSize: 16 }}>{therapist.name}</span>
+                                  <span style={{ fontSize: 14 }}>{therapist.name}</span>
                                 </div>
                               </div>
                               <img src={messageIcon} className="messageIcon" alt="" style={{ width: 35, height: 35 }} />

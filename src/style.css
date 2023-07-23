@@ -1321,8 +1321,9 @@ input::placeholder {
 .stats-card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .stats-card {
@@ -1420,7 +1421,7 @@ input::placeholder {
   margin-top: var(--padding-3xs);
   gap: var(--gap-base);
   width: 100%;
-  max-width: 969px;
+  /* max-width: 969px; */
 }
 
 .frame-container {
@@ -1438,8 +1439,9 @@ input::placeholder {
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-3xs);
+  position: relative;
   /* overflow: auto; */
-  margin-right: 7px;
+  /* margin-right: 7px; */
 }
 .frame-container .header {
   display: flex;
@@ -1496,12 +1498,13 @@ input::placeholder {
 .view-all {
   position: absolute;
   top: 14px;
-  left: 400px;
+  right: 0;
   font-weight: 500;
   color: var(--color-gray-500);
   text-align: right;
   font-size: var(--font-size-sm);
   font-family: var(--font-quicksand);
+  margin-right: 10px;
 }
 .profile-card-group {
   gap: 10px;
@@ -1722,6 +1725,18 @@ input::placeholder {
   justify-content: space-between;
   align-items: center;
 }
+.calendar-session-start-container {
+  width: 100%;
+  gap: var(--gap-5xl);
+  height: auto;
+  max-height: calc(100% - 352px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.calendar-session-start-container::-webkit-scrollbar {
+  display: none;
+}
 
 .current-session-title-container {
   display: flex;
@@ -1767,6 +1782,7 @@ end-time {
   align-items: center;
   justify-content: space-between;
   gap: var(--gap-9xs);
+  width: 100%;
 }
 
 .current-session-patient-name {
@@ -1790,24 +1806,30 @@ end-time {
   margin: 0;
 }
 
-.current-session-detail {
-  display: flex;
+.calendar-sessions-container {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: var(--br-base);
+  background-color: var(--color-gray-1200);
+  width: 100%;
+  height: 82px;
+  padding-left: var(--padding-base);
+  box-sizing: border-box;
+  align-items: center;
   justify-content: space-between;
-  align-items: center; /* Align items vertically */
 }
 
 .patient-details-arrow {
   display: flex;
-  align-items: center; /* Align the arrow vertically */
-  margin-left: auto; /* Push the arrow to the right end */
+  align-items: end;
+  justify-content: end;
 }
 
 .down-arrow-icon {
   width: 16px;
   height: 16px;
-  /* margin-left: ; */
+  margin-right: 15px;
 }
-
 
 .start-session-btn {
   position: absolute;
@@ -1987,6 +2009,28 @@ end-time {
   z-index: 1;
 }
 
+.user-menu-lists {
+  border-radius: var(--br-base);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--color-gray-100);
+  box-sizing: border-box;
+  width: 314px;
+  min-width: 314px;
+  padding: var(--padding-4xs) var(--padding-5xs);
+  /* align-items: flex-start; */
+  font-size: var(--font-size-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* overflow-y: auto; */
+  /* max-height: calc(100% - 250px); */
+  /* height: 558px; */
+  gap: var(--gap-5xl);
+  z-index: 1;
+}
+
 .user-heading {
   align-self: stretch;
   display: flex;
@@ -2015,7 +2059,7 @@ end-time {
 }
 
 .profile .username span {
-  font-size: var(--font-size-xl) !important;
+  font-size: var(--font-size-xl);
   line-height: 20px;
   font-weight: 600;
   color: var(--color-black);
@@ -2045,6 +2089,7 @@ end-time {
   display: flex;
   gap: var(--gap-3xs);
   font-size: var(--font-size-sm);
+  margin-right: 10px;
 }
 
 .menu-list .menu-item {
@@ -2064,6 +2109,22 @@ end-time {
     rgba(237, 161, 151, 0.2)
   );
   color: var(--color-black);
+  margin-left: 10px;
+}
+
+.menu-list .without-gradient {
+  border-radius: var(--br-81xl);
+  height: 56px;
+  min-width: 284px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: var(--padding-xs);
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+  background: transparent;
+  color: var(--color-black);
 }
 
 .menu-list .menu-item-selected {
@@ -2072,6 +2133,7 @@ end-time {
 
 .menu-item-selected p {
   color: var(--color-white);
+  margin-left: 10px;
 }
 
 .edit-menu {
@@ -2256,13 +2318,7 @@ end-time {
   white-space: normal;
   font-weight: 600;
 }
-.personal-details .sub-header p {
-  font-family: var(--font-quicksand);
-  white-space: normal;
-  font-size: var(--font-size-base);
-  line-height: 16px;
-  /* font-weight: 600; */
-}
+
 .contact-details:nth-child(2) {
   position: absolute;
   left: 50%;
@@ -2274,6 +2330,7 @@ end-time {
   font-family: var(--font-quicksand);
   white-space: normal;
   width: 100%;
+  margin-left: 4px;
 }
 
 .clinic-time-container {
@@ -2297,7 +2354,7 @@ end-time {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  /* gap: var(--gap-xs); */
 }
 .certificates-image {
   position: relative;
@@ -2306,6 +2363,8 @@ end-time {
   height: 118px;
   object-fit: cover;
   cursor: pointer;
+  margin-left: -10px;
+  margin-right: 10px;
 }
 
 .edit-profile-btn {
@@ -2391,10 +2450,12 @@ end-time {
   background: transparent;
   margin-right: 12px;
   width: 139px;
+  color: var(--color-palevioletred);
 }
 
 .complete-task button {
-  width: 139px;
+  width: auto;
+  min-width: 139px;
   display: flex;
   flex-direction: row;
   justify-content: center; /* Update: Center the button text horizontally */
@@ -2523,6 +2584,7 @@ end-time {
 .description .description-item {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .description .description-item img {
@@ -2597,12 +2659,16 @@ textarea {
   font: var(--font-quicksand);
   font-size: var(--font-size-sm);
   margin-bottom: 0px;
+  color: #000 !important;
+  font-weight: 600 !important;
 }
 
 input[type="date"] {
   width: 84% !important;
   margin-right: 26px;
   padding: 0;
+  color: #000 !important;
+  font-weight: 600 !important;
 }
 
 textarea {
@@ -2640,7 +2706,7 @@ label {
   border: 2px solid var(--color-gray-300);
   outline: none;
   cursor: pointer;
-  vertical-align: middle; /* Add this property to vertically align the radio button */
+  vertical-align: middle;
 }
 
 .gender label {
@@ -2680,20 +2746,26 @@ input[type="email"]::placeholder,
 input[type="tel"]::placeholder,
 input[type="date"]::placeholder {
   position: relative;
-  font-weight: 400;
+  font-weight: 500;
   opacity: 0.3;
   color: var(--color-black);
   font-size: var(--font-size-sm);
 }
 
-input[type="checkbox"] {
+.timing-section input[type="checkbox"] {
   margin-right: 5px;
 }
-input[type="checkbox"]:checked {
+
+.timing-section input[type="checkbox"]:checked {
   background-color: var(--color-black);
-  border-color: var(--color-primary);
+  border-color: var(--color-black);
   outline: none;
   box-shadow: none;
+}
+
+.timing-section input[type="checkbox"]:checked + label {
+  color: var(--color-black);
+  opacity: 1;
 }
 
 .inputField-margin {
@@ -2704,6 +2776,14 @@ input[type="checkbox"]:checked {
   border-radius: var(--br-xs);
   background-color: var(--color-gray-1200);
   border: 2px solid var(--color-white);
+  padding: var(--padding-base);
+  margin-bottom: 14px;
+}
+
+.qualifications-container {
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-1200);
+  /* border: 2px solid var(--color-white); */
   padding: var(--padding-base);
   margin-bottom: 14px;
 }
@@ -2742,13 +2822,14 @@ input[type="checkbox"]:checked {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
+  border: none;
   /* margin-bottom: 25px; */
 }
 
 .delete-icon-inner {
   color: white;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-5xl);
 }
 
 .availability-container {
@@ -2759,6 +2840,11 @@ input[type="checkbox"]:checked {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+input.form-check-input {
+  transform: scale(1.215);
+  color: #000;
 }
 
 .timing-section {
@@ -2789,6 +2875,8 @@ input[type="checkbox"]:checked {
 
 .day-section label {
   margin-bottom: 0;
+  color: #000 !important;
+  font-weight: 600 !important;
 }
 
 .dropdown-select {
@@ -2806,7 +2894,9 @@ input[type="checkbox"]:checked {
   border: none;
   /* position: absolute; */
   font-family: var(--font-quicksand);
-  font-size: var(--font-size-sm);
+  font-size: 13 !important;
+  color: #000 !important;
+  /* font-weight: 600 !important; */
   text-align: left;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3193,7 +3283,13 @@ input[type="checkbox"]:checked {
   justify-content: flex-start;
   gap: var(--gap-3xs);
 }
-
+.tab-count {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+.therapist-name {
+  font-size: var(--font-size-base) !important;
+}
 .tab {
   display: none;
 }
@@ -3241,12 +3337,26 @@ table {
 
 th {
   font-family: var(--font-quicksand);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
 }
 
 td {
   font-family: var(--font-quicksand);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
+}
+.table td,
+.table th {
+  vertical-align: middle !important;
+  padding: var(--padding-3xs);
+  border: none !important;
+}
+.table-row {
+  border-radius: 10px !important;
+  background-color: #000;
+  width: 100%;
+}
+.text-center {
+  /* text-align: start !important; */
 }
 
 .tab-container {
@@ -3656,11 +3766,23 @@ tbody td {
   border: 2px solid var(--color-gray-100);
   padding: var(--padding-base);
   gap: var(--gap-5xl);
-  height: auto;
+  height: 500px;
   overflow-y: scroll;
-  max-height: calc(100% - 212px);
+  max-height: calc(100% - 250px);
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin: 0 16px;
+}
+.month-calendar-session-container {
+  width: 100%;
+  border-radius: var(--br-base);
+  background-color: var(--color-gray-1200);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+  border: 2px solid var(--color-gray-100);
+  padding: var(--padding-base);
+  gap: var(--gap-5xl);
+  height: auto;
   margin: 0 16px;
 }
 .calendar-current-date-container {
@@ -3714,7 +3836,8 @@ tbody td {
   position: absolute;
   top: 100%;
   bottom: 0;
-  left: 10%;
+  left: 20%;
+  margin-left: 16px;
   transform: translateX(-50%);
 }
 
@@ -3858,6 +3981,92 @@ tbody td {
   /* width: 88px; */
   flex-shrink: 0;
   opacity: 0.7;
+}
+
+.calendar {
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: var(--font-quicksand);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-xl);
+}
+
+.calendar-header button {
+  border: none;
+  background: none;
+  font-size: var(--font-size-5xl);
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  margin: 0 10px;
+  color: #777;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.day-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  font-size: var(--font-size-base);
+}
+
+.empty-day {
+  height: 28px;
+  background-color: transparent;
+}
+
+.today {
+  background-color: #7a6ba3;
+  color: var(--color-white);
+}
+
+.datepicker-month {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.calendar-menu-item {
+  text-align: center;
+  align-items: center;
+  padding: 4px;
+}
+
+.calendar-menu-buttons button {
+  font-size: var(--font-size-base);
+}
+.calendar-menu-buttons img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.calender-menu-divider {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  height: 1px;
+  width: 100%;
+  margin: 10px 0;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.add-top{
+margin-right: 8px;
+margin-top: -20px;
 }
 
 /* mobile-view */

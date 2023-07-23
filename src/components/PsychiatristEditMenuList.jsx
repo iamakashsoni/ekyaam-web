@@ -8,7 +8,7 @@ const MenuItem = ({ title, path }) => {
 
     return (
         <Link to={path}>
-            <div className={`menu-item edit-menu ${isActive ? "menu-item-selected" : ""}`}>
+            <div className={`menu-item without-gradient edit-menu ${isActive ? "menu-item-selected" : ""}`}>
                 <button>
                     <p>{title}</p>
                 </button>
@@ -42,7 +42,7 @@ const PsychiatristEditMenuList = () => {
         },
     ];
     return (
-        <div className="user-menu-list">
+        <div className="user-menu-lists">
             <div className="menu-list-container">
                 <div className="menu-list">
                     {menuItems.map((menuItem) => (

@@ -44,12 +44,14 @@ const QualificationDetailsEdit = () => {
         <div className="user-information-container">
             <div className="information-header">
                 <p className="title">Qualification Details</p>
-                <button className="edit-profile-btn" id="add-qualification-btn" onClick={addQualification}>
-                    + Add Qualification
-                </button>
+                <div className="complete-task">
+                    <button className="" id="add-qualification-btn" onClick={addQualification}>
+                        + Add Qualification
+                    </button>
+                </div>
             </div>
             {qualifications.map((qualification) => (
-                <div className="qualification-container" key={qualification.id}>
+                <div className="qualifications-container" key={qualification.id}>
                     <button className="delete-icon" type="button" onClick={(e) => deleteQualification(e, qualification.id)}>
                         <span className="delete-icon-inner">-</span>
                     </button>
@@ -140,13 +142,14 @@ const QualificationDetailsEdit = () => {
                                     alt=""
                                     src="../images/rect-profile.png"
                                 />
-                                <button className="edit-profile-btn my-2" onClick={() => console.log("Update Profile")}>
-                                    Update Profile
-                                </button>
+                                <div className="task-overdue">
+                                    <button className="my-2" onClick={() => console.log("Update Profile")}>
+                                        Update Profile
+                                    </button></div>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-md-6 mt-3">
                                 <label htmlFor={`city-input-${qualification.id}`}>City:</label>
                                 <input
                                     type="text"
@@ -158,7 +161,7 @@ const QualificationDetailsEdit = () => {
                                     placeholder="City"
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 mt-3">
                                 <label htmlFor={`state-input-${qualification.id}`}>State:</label>
                                 <input
                                     type="text"

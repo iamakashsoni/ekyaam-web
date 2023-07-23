@@ -58,7 +58,7 @@ const ProfileItemContainer = ({ className }) => {
                             <span>+91 98765 43210</span>
                         </div>
                         <div className="description-item">
-                            <img alt="" src={placeBlackIcon} />
+                            <img alt="" src={placeBlackIcon} className="add-top" />
                             <span>296, Ravi Nivas, Sec. 30-A, Vashi, Navi Mumbai, 400703</span>
                         </div>
                     </div>

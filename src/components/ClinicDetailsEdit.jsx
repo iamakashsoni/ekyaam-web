@@ -298,7 +298,7 @@ function ClinicDetailsEdit() {
                         </button>
                     </div>
                     {sessions.map((session, index) => (
-                        <div className="qualification-container" key={index}>
+                        <div className="qualifications-container" key={index}>
                             <button className="delete-icon delete-position" type="button" onClick={() => deleteSession(index)}>
                                 <span className="delete-icon-inner">-</span>
                             </button>
@@ -342,7 +342,7 @@ function ClinicDetailsEdit() {
                         </button>
                     </div>
                     {holidays.map((holiday, index) => (
-                        <div className="qualification-container" key={index}>
+                        <div className="qualifications-container" key={index}>
                             <button className="delete-icon delete-position" type="button" onClick={() => deleteHoliday(index)}>
                                 <span className="delete-icon-inner">-</span>
                             </button>
